@@ -76,14 +76,7 @@ with col21:
     Living_Area = st.selectbox('Area of Residence', ['Class A City', 'Class B City', 'Class C City', 'Class D City', 'Class E City'], index=0)
     Home = st.selectbox('Type of Building', ['Rental', 'Selfowned with mortgage', 'Selfowned without mortgage'], index=0)
   with st.expander("**Channel**"):
-    Channel = st.selectbox('Distribution Channel', ['Agency', 'Branch'], index=0)
-
-with col22:
-  st.text("‎") 
-
-with col23:
-  st.text("‎") 
-  #API call
+    Channel = st.selectbox('Distribution Channel', ['Agency', 'Branch'], index=0)  
   inputdata = {
     "Channel": Channel,
     "Dependants": Dependants,
@@ -100,7 +93,17 @@ with col23:
     "NationalID": NationalID,
     "Nationality": Nationality,
     "Occupation": Occupation
-  }  
+  }   
+  if st.button("Submit Application", type='primary'):    
+    alldata = callSparkModel(inputdata)
+    outputs = alldata.json()['response_data']['outputs']
+
+with col22:
+  st.text("‎") 
+
+with col23:
+  st.text("‎") 
+  #API call 
   alldata = callSparkModel(inputdata)
   outputs = alldata.json()['response_data']['outputs']
   st.write("Illustration and Scoring")
@@ -123,9 +126,9 @@ with col23:
     st.markdown('***')
     df_illus = pd.DataFrame(outputs['Amortization'])
     st.write(df_illus)
-  with st.expander("**Scoring Details**"):
-    st.error('Under construction')
-  with st.expander("**API Results**"):  
-    st.write(outputs)
+  # with st.expander("**Scoring Details**"):
+  #   st.error('Under construction')
+  # with st.expander("**API Results**"):  
+  #   st.write(outputs)
 
 
