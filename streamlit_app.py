@@ -109,13 +109,17 @@ with col23:
     st.markdown('***')
     col1, col2, col3, col4 = st.columns([1,1,1,1])
     with col1:
-      st.metric(label='Monthly Payment', value=outputs['MonthlyLoanPayment'])
+      formatted_monthlypayment = "{:,.0f}".format(outputs['MonthlyLoanPayment'])
+      st.metric(label='Monthly Payment', value=formatted_monthlypayment)
     with col2:  
-      st.metric(label='Total Payment', value=outputs['Total_Monthly_Payment'])
+      formatted_totalpayment = "{:,.0f}".format(outputs['Total_Monthly_Payment'])
+      st.metric(label='Total Payment', value=formatted_totalpayment)
     with col3:  
-      st.metric(label='Interest Rate', value=outputs['LoanRate'])
+      formatted_interest = "{:.0f}%".format(outputs['LoanRate']*100)
+      st.metric(label='Interest Rate', value=formatted_interest)
     with col4:  
-      st.metric(label='Total Interest Paid', value=outputs['Total_Interest_Payment'])
+      formatted_totalinterest = "{:,.0f}".format(outputs['Total_Interest_Payment'])
+      st.metric(label='Total Interest Paid', value=formatted_totalinterest)
     st.markdown('***')
     df_illus = pd.DataFrame(outputs['Amortization'])
     st.write(df_illus)
