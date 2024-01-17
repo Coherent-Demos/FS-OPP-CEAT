@@ -80,7 +80,7 @@ with col21:
     with st.expander("**API Key**"):
       bearerToken = st.text_input("API Token", "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJwaUppeFpjYTJEZzVBZ0FneUZxUzU5d0RKV09lMC03VENBbUpZWktFTXRrIn0.eyJleHAiOjE3MDU0Njk2ODYsImlhdCI6MTcwNTQ2MjQ4NiwiYXV0aF90aW1lIjoxNzA1NDYyNDg0LCJqdGkiOiI2NWVkMWY1Yy1jYzI5LTRkM2YtOTNkNC1hNDNiY2QxN2EyZDgiLCJpc3MiOiJodHRwczovL2tleWNsb2FrLnVhdC5qcC5jb2hlcmVudC5nbG9iYWwvYXV0aC9yZWFsbXMvbnR0ZGF0YSIsImF1ZCI6InByb2R1Y3QtZmFjdG9yeSIsInN1YiI6ImNlMWNlYzgxLWFjZDQtNGMwYi05NDNmLWRjMTE5Mzg2MTRiZiIsInR5cCI6IkJlYXJlciIsImF6cCI6InByb2R1Y3QtZmFjdG9yeSIsIm5vbmNlIjoiN2E3YWNlZWMtM2VhYi00MTJmLWJkNTUtMTdkYjM5NGJiNGEwIiwic2Vzc2lvbl9zdGF0ZSI6ImQzMzA3OGFiLTViMmUtNDQ2OC1iNjE2LTRlMzQ0ZTVmMDNlMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cHM6Ly9tb2RlbGluZy1jZW50ZXIuZGV2LmNvaGVyZW50Lmdsb2JhbCIsImh0dHBzOi8vbW9kZWxpbmctY2VudGVyLnVzLmNvaGVyZW50Lmdsb2JhbCIsImh0dHBzOi8vc2EudWF0LmpwLmNvaGVyZW50Lmdsb2JhbCIsImh0dHBzOi8vc2Euc3RhZ2luZy5jb2hlcmVudC5nbG9iYWwiLCJodHRwczovL3Byb2R1Y3RmYWN0b3J5LnVhdC5qcC5jb2hlcmVudC5nbG9iYWwiLCJodHRwczovL3NwYXJrLnVhdC5qcC5jb2hlcmVudC5nbG9iYWwiLCJodHRwczovL3NwYXJrLXVzZXItbWFuYWdlci51YXQuanAuY29oZXJlbnQuZ2xvYmFsIiwiaHR0cHM6Ly9tb2RlbGluZy1jZW50ZXIuc3RhZ2luZy5jb2hlcmVudC5nbG9iYWwiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIl19LCJzY29wZSI6Im9wZW5pZCBvZmZsaW5lX2FjY2VzcyBzcGFyayBwcm9maWxlIiwic2lkIjoiZDMzMDc4YWItNWIyZS00NDY4LWI2MTYtNGUzNDRlNWYwM2UyIiwibmFtZSI6Ik1hcmsgQmFuYXJpYSIsImdyb3VwcyI6WyJ1c2VyOnBmIl0sInJlYWxtIjoibnR0ZGF0YSIsInByZWZlcnJlZF91c2VybmFtZSI6Im1hcmsuYmFuYXJpYUBjb2hlcmVudC5nbG9iYWwiLCJnaXZlbl9uYW1lIjoiTWFyayIsImZhbWlseV9uYW1lIjoiQmFuYXJpYSIsInVzZXJfY3JlYXRlZF90aW1lc3RhbXAiOjE3MDUwNTI5NzkzNTMsInJlbGF0aW9uIjoicGFydG5lciJ9.dZLs9-Kl0gkX0ex07yap5yrFnasPnqGG4a0Q76u8r5_FDSZwb8OVGnU_JI4_F3xuwQYbFpF6LrE3AZLX0u2XnS1KhjeTa9OpMLsamerGKQwN6aU5gpQXf0UBpoXuyug-0GPv5PI37uuWcJzQKFYnz_s3bWUZ8J3IFsLO3l-ZbXxYtizfmU45Ix-j0GlhAmfLqT3LnoMm3eYr0Ej19-PrsUduhtuJhMqbQOwounUUmcaCEMUjt2sb_K-J9-p-9P8HZpIHaEqnjSn5TSIB5bBjUpFTlXEx7RE3Th_UxHx5YiksbQCR8GMyqe9_Ku9C_sZcPgPTC3dUDMUnPmaZNHhChA")
 
-    GenerateIncentiveReports_clicked = st.form_submit_button("## **Submit**", use_container_width=True)
+    GenerateIncentiveReports_clicked = st.form_submit_button("**Submit**", use_container_width=True)
     if GenerateIncentiveReports_clicked:
       inputdata["EXEC_1"]["FileName"] = "Individual Sales Incentive Report - Exec " + inputdata["Exec1_Employee_ID"] + "- " + inputdata["Year"] + inputdata["Quarter"]
       inputdata["ALL_EXECS"]["FileName"] = "All Execs - " + inputdata["Year"] + inputdata["Quarter"] + " - Sales Incentive Report"
@@ -112,7 +112,7 @@ with col23:
   with st.expander("Spark Model", expanded=True):
     st.markdown('[https://excel.uat.jp.coherent.global/nttdata/api/v3/folders/SIP/services/Sales%20Incentive%20Report%20Generator/Execute](https://excel.uat.jp.coherent.global/nttdata/api/v3/folders/SIP/services/Sales%20Incentive%20Report%20Generator/Execute)')
 
-  tab1, tab2 = st.tabs(["## **Individual**", "## **All Execs**"])
+  tab1, tab2 = st.tabs(["**Individual**", "**All Execs**"])
 
   with tab1:
 
