@@ -55,7 +55,7 @@ SparkErrors = []
 image_path = "ceat-logo.png"
 st.image(image_path, caption="", width=120)
 
-st.write("## CEAT Sales Incentive Program")
+st.write("## CEAT Sales Incentive Platform")
 
 col21, col22, col23 = st.columns([12, 2, 32])
 
